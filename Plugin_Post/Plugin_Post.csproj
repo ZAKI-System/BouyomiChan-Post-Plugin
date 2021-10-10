@@ -98,7 +98,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.md" />
     <None Include="Resources\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
