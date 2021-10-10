@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Plugin_Post.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="httpUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost</Value>
+    </Setting>
+    <Setting Name="postPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/post</Value>
+    </Setting>
+    <Setting Name="clearPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/clear</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
