@@ -42,6 +42,8 @@ namespace Plugin_Post
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.keyTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -104,7 +106,7 @@ namespace Plugin_Post
             this.postTestButton.Margin = new System.Windows.Forms.Padding(2);
             this.postTestButton.Name = "postTestButton";
             this.postTestButton.Size = new System.Drawing.Size(80, 24);
-            this.postTestButton.TabIndex = 6;
+            this.postTestButton.TabIndex = 8;
             this.postTestButton.Text = "送信テスト";
             this.postTestButton.UseVisualStyleBackColor = true;
             this.postTestButton.Click += new System.EventHandler(this.PostTestButton_Click);
@@ -115,7 +117,7 @@ namespace Plugin_Post
             this.clearTestButton.Margin = new System.Windows.Forms.Padding(2);
             this.clearTestButton.Name = "clearTestButton";
             this.clearTestButton.Size = new System.Drawing.Size(80, 24);
-            this.clearTestButton.TabIndex = 7;
+            this.clearTestButton.TabIndex = 9;
             this.clearTestButton.Text = "削除テスト";
             this.clearTestButton.UseVisualStyleBackColor = true;
             this.clearTestButton.Click += new System.EventHandler(this.ClearTestButton_Click);
@@ -126,7 +128,7 @@ namespace Plugin_Post
             this.clearButton.Margin = new System.Windows.Forms.Padding(2);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(80, 24);
-            this.clearButton.TabIndex = 8;
+            this.clearButton.TabIndex = 10;
             this.clearButton.Text = "削除実行";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
@@ -139,7 +141,7 @@ namespace Plugin_Post
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(555, 118);
-            this.textBox4.TabIndex = 9;
+            this.textBox4.TabIndex = 11;
             // 
             // saveButton
             // 
@@ -147,7 +149,7 @@ namespace Plugin_Post
             this.saveButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(80, 24);
-            this.saveButton.TabIndex = 10;
+            this.saveButton.TabIndex = 12;
             this.saveButton.Text = "保存";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -159,10 +161,28 @@ namespace Plugin_Post
             this.closeButton.Margin = new System.Windows.Forms.Padding(2);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(80, 24);
-            this.closeButton.TabIndex = 11;
+            this.closeButton.TabIndex = 13;
             this.closeButton.Text = "閉じる";
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // keyTextBox
+            // 
+            this.keyTextBox.Location = new System.Drawing.Point(115, 96);
+            this.keyTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.keyTextBox.Name = "keyTextBox";
+            this.keyTextBox.Size = new System.Drawing.Size(100, 22);
+            this.keyTextBox.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 99);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "送信key名";
             // 
             // Form1
             // 
@@ -170,6 +190,8 @@ namespace Plugin_Post
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.closeButton;
             this.ClientSize = new System.Drawing.Size(582, 352);
+            this.Controls.Add(this.keyTextBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.textBox4);
@@ -209,5 +231,7 @@ namespace Plugin_Post
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.TextBox keyTextBox;
+        private System.Windows.Forms.Label label4;
     }
 }

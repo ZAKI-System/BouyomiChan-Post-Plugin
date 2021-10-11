@@ -22,6 +22,7 @@ namespace Plugin_Post
         public static string httpUrl = "http://localhost";
         public static string postPath = "/post";
         public static string clearPath = "/clear";
+        public static string dataName = "data";
         public static string lastError = "";
 
         // private
@@ -45,6 +46,7 @@ namespace Plugin_Post
             httpUrl = Properties.Settings.Default.httpUrl;
             postPath = Properties.Settings.Default.postPath;
             clearPath = Properties.Settings.Default.clearPath;
+            dataName = Properties.Settings.Default.dataName;
 
             // 音声項目登録
             Pub.FormMain.comboBoxVoiceType.SelectedIndexChanged += ComboBoxVoiceType_SelectedIndexChanged;
@@ -128,11 +130,12 @@ namespace Plugin_Post
                         var pUri = new Uri(bUri, postPath);
                         
                         // パラメータ 外部指定時はそれを設定、その他はスライダー値を設定
+                        // "\"を"\\"に、'"'を'\"'に JSON escape(手動)
                         string escapedWord = e.ReplaceWord.Replace("\\", "\\\\").Replace("\"", "\\\"");
                         int speed = e.TalkTask.Speed == -1 ? curSpeed : e.TalkTask.Speed;
                         int tone = e.TalkTask.Tone == -1 ? curTone : e.TalkTask.Tone;
                         int volume = e.TalkTask.Volume == -1 ? curVolume : e.TalkTask.Volume;
-                        byte[] body = Encoding.UTF8.GetBytes("{\"data\": \"" + escapedWord + "\",\"speed\":" + speed + ",\"tone\":" + tone + ",\"volume\":" + volume + "}");
+                        byte[] body = Encoding.UTF8.GetBytes("{\""+dataName+"\": \"" + escapedWord + "\",\"speed\":" + speed + ",\"tone\":" + tone + ",\"volume\":" + volume + "}");
                         
                         // 送信
                         client.Headers.Add("Content-Type", "application/json");

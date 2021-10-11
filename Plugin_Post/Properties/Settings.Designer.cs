@@ -58,5 +58,17 @@ namespace Plugin_Post.Properties {
                 this["clearPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("data")]
+        public string dataName {
+            get {
+                return ((string)(this["dataName"]));
+            }
+            set {
+                this["dataName"] = value;
+            }
+        }
     }
 }

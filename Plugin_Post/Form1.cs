@@ -19,6 +19,7 @@ namespace Plugin_Post
             urlTextBox.Text = Plugin_Post.httpUrl;
             postTextBox.Text = Plugin_Post.postPath;
             clearTextBox.Text = Plugin_Post.clearPath;
+            keyTextBox.Text = Plugin_Post.dataName;
             textBox4.Text = Plugin_Post.lastError;
         }
 
@@ -47,6 +48,19 @@ namespace Plugin_Post
             {
                 MessageBox.Show(ex.ToString(), "URI形式エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
+        }
+
+        private bool CheckName()
+        {
+            if (keyTextBox.Text == "")
+            {
+                MessageBox.Show("key名は何か入れてください。", "key名が未入力", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 
@@ -150,14 +164,16 @@ namespace Plugin_Post
         /// <param name="e"></param>
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (CheckUri())
+            if (CheckUri() && CheckName())
             {
                 Plugin_Post.httpUrl = urlTextBox.Text;
                 Plugin_Post.postPath = postTextBox.Text;
                 Plugin_Post.clearPath = clearTextBox.Text;
+                Plugin_Post.dataName = keyTextBox.Text;
                 Properties.Settings.Default.httpUrl = Plugin_Post.httpUrl;
                 Properties.Settings.Default.postPath = Plugin_Post.postPath;
                 Properties.Settings.Default.clearPath = Plugin_Post.clearPath;
+                Properties.Settings.Default.dataName = Plugin_Post.dataName;
                 Properties.Settings.Default.Save();
                 MessageBox.Show("保存");
             }
