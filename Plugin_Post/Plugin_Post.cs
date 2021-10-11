@@ -14,7 +14,7 @@ namespace Plugin_Post
     {
         // bouyomiプラグイン設定
         public string Name => "Bouyomi POST Plugin";
-        public string Version => "2021/10/11r1";
+        public string Version => "2021/10/11r2";
         public string Caption => "bouyomiからHTTP POST送信します。";
         public ISettingFormData SettingFormData => null;
 
